@@ -1,17 +1,15 @@
-fn main (){
-    let x = String::from ("Hello World");
-
-    takes_ownership (x);
-
-    let s = 5;
-
-    makes_copy(s);
+struct Rectangle{
+    width: u32,
+    height: u32,
 }
 
-fn takes_ownership(x: String){
-    println!("{}", x);
+fn main(){
+    let rect1 = Rectangle{width: 30, height: 50};
+    
+    println!("The area of the rectangle is {} square pixels.", area(&rect1));
+
 }
 
-fn makes_copy(s: i32){
-    println!("{}", s);
+fn area(rectangle: &Rectangle) -> u32{
+    rectangle.width * rectangle.height
 }
