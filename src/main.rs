@@ -1,15 +1,19 @@
-struct Rectangle{
-    width: u32,
-    height: u32,
-}
-
-fn main(){
-    let rect1 = Rectangle{width: 30, height: 50};
-    
-    println!("The area of the rectangle is {} square pixels.", area(&rect1));
+enum Coin(){
+    Penny,
+    Nickel,
+    Dime,
+    Quarter,
 
 }
 
-fn area(rectangle: &Rectangle) -> u32{
-    rectangle.width * rectangle.height
+fn value_in_cents(coin: Coin) -> u8{
+    match coin{
+        Coin::Penny => {
+            println!("Lucky Penny!");
+            1
+        }
+        Coin::Nickel => 5,
+        Coin::Dime => 10,
+        Coin::Quarter => 25,
+    }
 }
