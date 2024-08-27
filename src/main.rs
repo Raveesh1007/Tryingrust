@@ -6,7 +6,7 @@ use livekit_api::webhooks;
 use std::convert::Infallible;
 use std::net::SocketAddr;
 
-[tokio::main]
+#[tokio::main]
 async fn main() {
     let addr = SocketAddr::from(([127, 0, 0, 1], 3000));
 
