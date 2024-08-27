@@ -28,7 +28,7 @@ async fn handle(req: Request<Body>) -> Result<Response<Body>, Infallible> {
                 .headers()
                 .get("Authorization")
                 .and_then(|hv| hv.to_str().ok())
-                .unwrap_or_default()
+                .unwrap_or_default();
                 .to_string();
 
             let jwt = jwt.trim();
