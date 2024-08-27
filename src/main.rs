@@ -128,7 +128,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let source = NativeAudioSource::new(
         AudioSourceOptions::default(),
         header.sample_rate,
-        header.num_channels as u32,
+        header.num_channels as u32
     );
 
     let track = LocalAudioTrack::create_audio_track("file", RtcAudioSource::Native(source.clone()));
