@@ -1,17 +1,21 @@
-fn main(){
-    let mut name = {String::from("Johny depp")};
-    let word2 = find_first_word(&name);
-    println!("{}", name);
+pub trait Summary {
+    fn summarize(&self) -> String;    
+}
+struct User {
+    name: String,
+    age: u32,
 }
 
-fn find_first_word(name : &String) -> &str{
-    let mut index = 0;{
-        for (_, i) in name.chars().enumerate(){
-            if  i == ' '{
-                break;
-            }
-        } index = index + 1;
+impl Summary for User {
+    fn summarize (&self) -> String{
+        return format!("Name: {}, Age: {},", self.name, self.age); 
     }
+}
 
-    return  &name[..index];
+fn main (){
+    let user = User {
+        name : String::from("Raveesh"),
+        age : 25,
+    };
+    println!("{}", user.summarize());
 }
