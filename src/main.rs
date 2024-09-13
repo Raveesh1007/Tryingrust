@@ -1,9 +1,17 @@
 fn main(){
-    let v1 = vec![1, 2, 3];
+    let mut name = {String::from("Johny depp")};
+    let word2 = find_first_word(&name);
+    println!("{}", name);
+}
 
-    let v1_iter = v1.iter();
+fn find_first_word(name : &String) -> &str{
+    let mut index = 0;{
+        for (_, i) in name.chars().enumerate(){
+            if  i == ' '{
+                break;
+            }
+        } index = index + 1;
+    }
 
-    let sum : i32 = v1_iter.sum();
-    println!("sum is {}", sum);
-
+    return  &name[..index];
 }
