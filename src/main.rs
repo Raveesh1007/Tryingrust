@@ -7,7 +7,10 @@ struct User {
 }
 
 impl Summary for User {
-
+    fn summarize (&self) -> String{
+        return format!("Name: {}, Age: {},", self.name, self.age); 
+    }
+}
 
 fn main (){
     let user = User {
