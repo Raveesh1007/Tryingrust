@@ -18,4 +18,3 @@ fn main (){
         age : 25,
     };
     println!("{}", user.summarize());
-}
