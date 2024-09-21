@@ -20,4 +20,3 @@ fn main (){
     println!("{}", user.summarize());
 }
 
-//Output: Name: Raveesh
